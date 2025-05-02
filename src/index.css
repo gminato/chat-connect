@@ -4,10 +4,21 @@
   --text-primary: hsl(223, 84%, 5%);
   --text-muted: hsl(215, 16%, 47%);
   --card-border: hsl(214, 32%, 91%);
+  --icon-color: hsl(236, 46%, 50%);
 }
 
 @theme {
   --color-text-primary: var(--text-primary);
   --color-text-muted: var(--text-muted);
   --color-card-border: var(--card-border);
+  --animate-fade-in: fade-in 0.4s ease-in;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }

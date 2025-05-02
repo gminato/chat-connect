@@ -1,8 +1,11 @@
 import { CircleCheck } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
-    <main className="w-screen h-screen flex flex-1 items-center justify-center p-6">
+    <main className="w-screen h-screen flex flex-1 items-center justify-center p-6 animate-fade-in">
       <div className="items-center justify-center w-full max-w-md">
         <h3 className="text-text-primary text-4xl mb-2 font-bold tracking-tight text-center">
           Chat Connect
@@ -15,7 +18,12 @@ export default function Home() {
             <h5 className="text-text-primary mb-8 mt-5 text-xl font-bold">
               Sign in to your account
             </h5>
-            <button className="px-20 py-2 border border-card-border rounded-2xl cursor-pointer hover:bg-card-border">
+            <button
+              onClick={() => {
+                navigate("/chat");
+              }}
+              className="px-20 py-2 border border-card-border rounded-2xl cursor-pointer hover:bg-card-border"
+            >
               Sign in with Google
             </button>
             {/* Divider line with text */}
@@ -28,21 +36,21 @@ export default function Home() {
           <div className="px-4">
             <div className="flex space-x-3 space-y-3">
               <span>
-                <CircleCheck color="#454dba" />
+                <CircleCheck color="var(--icon-color)" />
               </span>
               <span>Real-time messaging</span>
             </div>
 
             <div className="flex space-x-3 space-y-3">
               <span>
-                <CircleCheck color="#454dba" />
+                <CircleCheck color="var(--icon-color)" />
               </span>
               <span>Unlimited messages</span>
             </div>
 
             <div className="flex space-x-3 space-y-3">
               <span>
-                <CircleCheck color="#454dba" />
+                <CircleCheck color="var(--icon-color)" />
               </span>
               <span>Emoji Support</span>
             </div>

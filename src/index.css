@@ -11,6 +11,7 @@
   --color-text-primary: var(--text-primary);
   --color-text-muted: var(--text-muted);
   --color-card-border: var(--card-border);
+  --color-hover-input: var(--icon-color)
   --animate-fade-in: fade-in 0.4s ease-in;
 
   @keyframes fade-in {

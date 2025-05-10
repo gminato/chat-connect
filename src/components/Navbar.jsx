@@ -1,9 +1,12 @@
 import { LogOut, MessageSquare, User } from "lucide-react";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
+import { useAuth } from "../context/AuthContext";
 
 export default function NavBar() {
   const location = useLocation();
   console.log("Current URL:", location.pathname);
+  const { signOut } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <nav className="abosolute top-0 left-0 h-15 flex items-center justify-between p-5 border-b-1 border-card-border">
@@ -25,6 +28,10 @@ export default function NavBar() {
         </li>
         <li>
           <LogOut
+            onClick={() => {
+              signOut();
+              navigate("/");
+            }}
             size={18}
             color={
               location.pathname === "/logout" ? "var(--icon-color)" : "gray"

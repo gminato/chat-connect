@@ -1,5 +1,4 @@
 import { Search } from "lucide-react";
-import { useState } from "react";
 import ContactUser from "./ContactUser";
 
 //({profileUrl,name, lastMessage, time, unreadCount, status}) {
